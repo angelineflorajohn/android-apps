@@ -37,6 +37,13 @@ public class MainActivity extends AppCompatActivity {
         btnPressed = vw.getId();
         enteredBillAmount = edt.getText();
 
+        //check if the user has entered a valid value in the bill amount field and return early on empty
+        if (enteredBillAmount.toString().isEmpty()) {
+            finalDisplayText = "" ;
+            tvw.setText(finalDisplayText);
+            return;
+        }
+
         //convert text to number to perform calculations
         billAmount = Integer.parseInt(String.valueOf(enteredBillAmount));
 
